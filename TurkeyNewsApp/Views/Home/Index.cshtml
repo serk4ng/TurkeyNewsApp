@@ -1,0 +1,29 @@
+﻿@using TurkeyNewsApp.Models
+@model List<News> 
+@{
+    ViewBag.Title = "Haberler";
+}
+
+<div class="jumbotron">
+    <h3>Teknoloji Haberleri</h3>
+
+</div>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+    <div class="col-lg-3" >
+        <img src="@item.UrlToImage" style="width:100% !important;" />
+        <h2>@item.Title</h2>
+        <p>@item.PublishedAt</p>
+        <pre>@item.source.name</pre>
+        <p>
+            @item.Description
+        </p>
+<a class="btn btn-dark" href="@item.Url" target="_blank" style="color:white !important;margin-bottom:30px;">Devamını Oku</a>
+    </div>
+           
+    }
+     
+
+ </div>
